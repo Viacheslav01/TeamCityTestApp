@@ -5,10 +5,15 @@
     xmlns:local="using:TeamCityTestApp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:TeamCityTestApp.ViewModels"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+	d:DataContext="{d:DesignInstance models:MainPageViewModel}">
 
     <Grid>
-
+		<StackPanel Margin="19">
+			<TextBlock Text="{Binding Text}" Style="{ThemeResource SubheaderTextBlockStyle}"/>
+			<Button x:Uid="HelloButton" Content="Hello" Command="{Binding SayHelloCommand}"/>
+		</StackPanel>
     </Grid>
 </Page>
